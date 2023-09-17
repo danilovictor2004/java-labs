@@ -2,11 +2,6 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.idea/.gitignore
-.idea/Especialista-Java.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
 
 ### Eclipse ###
 .apt_generated
