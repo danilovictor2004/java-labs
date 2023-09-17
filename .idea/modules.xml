@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Especialista-Java.iml" filepath="$PROJECT_DIR$/.idea/Especialista-Java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/br.com.curso.java.algaworks/br.com.curso.java.algaworks.iml" filepath="$PROJECT_DIR$/br.com.curso.java.algaworks/br.com.curso.java.algaworks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.calculadora-imc/br.com.algaworks.calculadora-imc.iml" filepath="$PROJECT_DIR$/br.com.algaworks.calculadora-imc/br.com.algaworks.calculadora-imc.iml" />
     </modules>
   </component>
 </project>
