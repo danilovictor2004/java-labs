@@ -1,11 +1,18 @@
+import java.util.Scanner;
+
 public class Principal {
 
     public static void main(String[] args) {
         CalculadoraIMC calculadoraIMC = new CalculadoraIMC();
-        calculadoraIMC.altura = 1.82;
-        calculadoraIMC.peso = 175;
+        Scanner scanner = new Scanner(System.in);
 
-        IndiceMassaCorporal imc = calculadoraIMC.calcular();
+        System.out.print("Informe a altura: ");
+        double altura = scanner.nextDouble(); //1.82;
+
+        System.out.print("Informe o peso: ");
+        double peso = scanner.nextDouble(); //175;
+
+        IndiceMassaCorporal imc = calculadoraIMC.calcular(peso, altura);
 
         if (imc.estaComObesidade()) {
             System.out.printf("Paciente com altura de %.2f e peso de %.2f " +
