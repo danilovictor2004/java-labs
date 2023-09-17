@@ -4,15 +4,17 @@ public class Principal {
 
     public static void main(String[] args) {
         CalculadoraIMC calculadoraIMC = new CalculadoraIMC();
+        Paciente paciente = new Paciente();
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Informe a altura: ");
-        double altura = scanner.nextDouble(); //1.82;
+        paciente.altura = scanner.nextDouble(); //1.82;
 
         System.out.print("Informe o peso: ");
-        double peso = scanner.nextDouble(); //175;
+        paciente.peso = scanner.nextDouble(); //175;
 
-        IndiceMassaCorporal imc = calculadoraIMC.calcular(peso, altura);
+        IndiceMassaCorporal imc = calculadoraIMC.calcular(paciente);
 
         if (imc.estaComObesidade()) {
             System.out.printf("Paciente com altura de %.2f e peso de %.2f " +
