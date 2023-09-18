@@ -1,8 +1,10 @@
 public class Principal {
     public static void main(String[] args) {
         FolhaPagamento folhaPagamento = new FolhaPagamento();
-        double totalReceber = folhaPagamento.calcularSalario();
+        Funcionario funcionario = new Funcionario();
 
-        System.out.printf("O funcionário irá receber R$ %.2f de salário ", totalReceber);
+        double totalReceber = folhaPagamento.calcularSalario(funcionario);
+
+        System.out.printf("O funcionário %s irá receber R$ %.2f de salário ", funcionario.nome, totalReceber);
     }
 }
