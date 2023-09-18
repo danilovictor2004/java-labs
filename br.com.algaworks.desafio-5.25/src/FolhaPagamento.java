@@ -4,7 +4,7 @@ public class FolhaPagamento {
 
     Scanner scanner = new Scanner(System.in);
 
-    double calcularHorasTrabalhadas() {
+    double calcularValorHorasTrabalhadas() {
         System.out.print("Informe o total de horas trabalhadas: ");
         int horasTrabalhadas = scanner.nextInt();
 
@@ -14,7 +14,7 @@ public class FolhaPagamento {
         return horasTrabalhadas * valorHora;
     }
 
-    double calcularHorasExtrasTrabalhadas() {
+    double calcularValorHorasExtrasTrabalhadas() {
 
         System.out.print("Informe total de horas extras trabalhadas: ");
         int horaExtra = scanner.nextInt();
@@ -26,8 +26,6 @@ public class FolhaPagamento {
     }
 
     double calcularSalario() {
-        double valorTotalTrabalhadas = calcularHorasTrabalhadas();
-        double valorTotalExtraTrabalhadas = calcularHorasExtrasTrabalhadas();
-        return valorTotalTrabalhadas + valorTotalExtraTrabalhadas;
+        return calcularValorHorasTrabalhadas() + calcularValorHorasExtrasTrabalhadas();
     }
 }
