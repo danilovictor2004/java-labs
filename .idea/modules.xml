@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Especialista-Java.iml" filepath="$PROJECT_DIR$/.idea/Especialista-Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.calculadora-imc/br.com.algaworks.calculadora-imc.iml" filepath="$PROJECT_DIR$/br.com.algaworks.calculadora-imc/br.com.algaworks.calculadora-imc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.desafio-5.25/br.com.algaworks.desafio-5.25.iml" filepath="$PROJECT_DIR$/br.com.algaworks.desafio-5.25/br.com.algaworks.desafio-5.25.iml" />
     </modules>
   </component>
 </project>
