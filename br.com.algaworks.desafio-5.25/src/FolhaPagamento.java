@@ -1,21 +1,23 @@
 import java.util.Scanner;
 
 public class FolhaPagamento {
-    private static final double PERCENTUAL_ADICIONAL = 1.1;
+    private static final double PERCENTUAL_ADICIONAL = 0.1;
 
     Scanner scanner = new Scanner(System.in);
 
-    double calcularSalario(ContratoTrabalho contratoTrabalho) {
+    Holerite calcularSalario(ContratoTrabalho contratoTrabalho) {
         Funcionario funcionario = getFuncionario(contratoTrabalho);
 
-        double totalReceber = contratoTrabalho.valorHora * contratoTrabalho.horaTrabalhada;
-        double totalReceberExtra = contratoTrabalho.valorHoraExtra * contratoTrabalho.horaExtraTrabalhada;
-        double total = totalReceber + totalReceberExtra;
+        Holerite holerite = new Holerite();
+        holerite.funcionario = contratoTrabalho.funcionario;
+        holerite.funcionario.nome = contratoTrabalho.funcionario.nome;
+        holerite.valorTotalHora = contratoTrabalho.valorHora * contratoTrabalho.horaTrabalhada;
+        holerite.valorTotalHoraExtra = contratoTrabalho.valorHoraExtra * contratoTrabalho.horaExtraTrabalhada;
 
         if (funcionario.possuiFilho())
-            return total * PERCENTUAL_ADICIONAL;
+            holerite.valorAdicional = holerite.calcularValorTotal() * PERCENTUAL_ADICIONAL;
 
-        return total;
+        return holerite;
     }
 
     private Funcionario getFuncionario(ContratoTrabalho contratoTrabalho) {
@@ -40,7 +42,6 @@ public class FolhaPagamento {
 
         System.out.print("Informe valor por hora extra trabalhadas: ");
         contratoTrabalho.valorHoraExtra = scanner.nextDouble();
-        contratoTrabalho.valorAdicional = 0;
 
         return funcionario;
     }
