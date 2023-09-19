@@ -6,6 +6,19 @@ public class FolhaPagamento {
     Scanner scanner = new Scanner(System.in);
 
     double calcularSalario(ContratoTrabalho contratoTrabalho) {
+        Funcionario funcionario = getFuncionario(contratoTrabalho);
+
+        double totalReceber = contratoTrabalho.valorHora * contratoTrabalho.horaTrabalhada;
+        double totalReceberExtra = contratoTrabalho.valorHoraExtra * contratoTrabalho.horaExtraTrabalhada;
+        double total = totalReceber + totalReceberExtra;
+
+        if (funcionario.possuiFilho())
+            return total * PERCENTUAL_ADICIONAL;
+
+        return total;
+    }
+
+    private Funcionario getFuncionario(ContratoTrabalho contratoTrabalho) {
         Funcionario funcionario = new Funcionario();
 
         contratoTrabalho.funcionario = funcionario;
@@ -29,11 +42,6 @@ public class FolhaPagamento {
         contratoTrabalho.valorHoraExtra = scanner.nextDouble();
         contratoTrabalho.valorAdicional = 0;
 
-        double total = contratoTrabalho.valorHora * contratoTrabalho.horaTrabalhada;
-
-        if (funcionario.possuiFilho())
-            return total * PERCENTUAL_ADICIONAL;
-
-        return total;
+        return funcionario;
     }
 }
