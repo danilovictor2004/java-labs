@@ -1,6 +1,6 @@
 <h3>Desafio</h3>
 
-1. Implementação de método
+**1. Implementação de método**
 *   Uma empresa contratou você para continuar o desenvolvimento de um sistema de folha de pagamentos.
 
 
@@ -30,7 +30,7 @@
 
 * Crie uma classe com o método `main` para invocar o método implementado e imprima o resultado (salário devido) na saída.
 
-2. Passando objeto como argumento de método
+**2. Passando objeto como argumento de método**
 *   O desenvolvedor sênior da empresa que te contratou revisou o seu código e pediu algumas alterações.
 
 * Você deve criar uma classe `Funcionario` com as seguintes propriedades:
@@ -56,3 +56,20 @@ Além disso, uma nova regra deve ser adicionada neste mesmo método:
 
 
 * Crie métodos na classe `Funcionario` e `ContratoTrabalho` para que você possa "perguntar" ao objeto se o contrato possui ou não o adicional para filhos, tornando assim essas classes mais ricas.
+
+**3. Composição e retorno de objeto**
+
+* Mais uma alteração foi solicitada para você.
+Agora, você deve alterar o código do método `calcularSalario` da classe `FolhaPagamento` para retornar um novo tipo `Holerite`.
+
+
+* A classe `Holerite` deve ter as seguintes propriedades:
+
+1. [x] _Funcionário_
+2. [x] _Valor total das horas normais_
+3. [x] _Valor total das horas extras_
+4. [x] _Valor do adicional para filhos_
+
+* Além disso, a classe `Holerite` deve possuir os seguintes comportamentos/métodos:
+1. [x] Calcular valor total (deve somar todos os valores e chegar no valor total)
+3. [x] Imprimir (deve imprimir na saída todos os detalhes do holerite)
