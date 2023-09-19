@@ -3,7 +3,7 @@ public class Funcionario {
     String nome;
     int quantidadeFilho;
 
-    boolean possuiFilho () {
+    boolean possuiFilho() {
         return quantidadeFilho > 0;
     }
 }

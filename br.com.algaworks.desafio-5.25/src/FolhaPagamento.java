@@ -1,32 +1,13 @@
 import java.util.Scanner;
 
 public class FolhaPagamento {
+    private static final double PERCENTUAL_ADICIONAL = 1.1;
 
     Scanner scanner = new Scanner(System.in);
 
-//    double calcularValorHorasTrabalhadas() {
-//        System.out.print("Informe o total de horas trabalhadas: ");
-//        int horasTrabalhadas = scanner.nextInt();
-//
-//        System.out.print("Informe o valor da hora trabalhadas: ");
-//        double valorHora = scanner.nextDouble();
-//
-//        return horasTrabalhadas * valorHora;
-//    }
-//
-//    double calcularValorHorasExtrasTrabalhadas() {
-//
-//        System.out.print("Informe total de horas extras trabalhadas: ");
-//        int horaExtra = scanner.nextInt();
-//
-//        System.out.print("Informe valor por hora extra trabalhadas: ");
-//        double valorExtra = scanner.nextDouble();
-//
-//        return horaExtra * valorExtra;
-//    }
+    double calcularSalario(ContratoTrabalho contratoTrabalho) {
+        Funcionario funcionario = new Funcionario();
 
-    double calcularSalario(Funcionario funcionario) {
-        ContratoTrabalho contratoTrabalho = new ContratoTrabalho();
         contratoTrabalho.funcionario = funcionario;
 
         System.out.print("Funcionário: ");
@@ -48,13 +29,11 @@ public class FolhaPagamento {
         contratoTrabalho.valorHoraExtra = scanner.nextDouble();
         contratoTrabalho.valorAdicional = 0;
 
-
-
         double total = contratoTrabalho.valorHora * contratoTrabalho.horaTrabalhada;
 
         if (funcionario.possuiFilho())
-            contratoTrabalho.valorAdicional = total * 0.1;
+            return total * PERCENTUAL_ADICIONAL;
 
-        return total + contratoTrabalho.valorAdicional;
+        return total;
     }
 }
