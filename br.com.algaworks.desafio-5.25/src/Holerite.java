@@ -18,5 +18,4 @@ public class Holerite {
         System.out.printf("Valor Adicional: R$ %.2f%n", valorAdicional);
         System.out.printf("Total a Receber: R$ %.2f%n", calcularValorTotal());
     }
-
 }

@@ -3,7 +3,7 @@ public class Principal {
         FolhaPagamento folhaPagamento = new FolhaPagamento();
         ContratoTrabalho contratoTrabalho = new ContratoTrabalho();
 
-        Holerite totalReceber = folhaPagamento.calcularSalario(contratoTrabalho);
-        totalReceber.imprimirHolerite();
+        Holerite holerite = folhaPagamento.calcularSalario(contratoTrabalho);
+        holerite.imprimirHolerite();
     }
 }
