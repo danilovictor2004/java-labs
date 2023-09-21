@@ -5,31 +5,38 @@ public class FolhaPagamento {
 
     Scanner scanner = new Scanner(System.in);
 
-    Holerite calcularSalario(ContratoTrabalho contratoTrabalho) {
-        Funcionario funcionario = getFuncionario(contratoTrabalho);
+    Holerite calcularSalario() {
+
+        Funcionario funcionario = construirFuncionario();
+        ContratoTrabalho contrato = construirContrato();
 
         Holerite holerite = new Holerite();
-        holerite.funcionario = contratoTrabalho.funcionario;
-        holerite.funcionario.nome = contratoTrabalho.funcionario.nome;
-        holerite.valorTotalHora = contratoTrabalho.valorHora * contratoTrabalho.horaTrabalhada;
-        holerite.valorTotalHoraExtra = contratoTrabalho.valorHoraExtra * contratoTrabalho.horaExtraTrabalhada;
+        contrato.funcionario = funcionario;
+        holerite.funcionario = contrato.funcionario;
+        holerite.funcionario.nome = funcionario.nome;
+        holerite.valorTotalHora = contrato.valorHora * contrato.horaTrabalhada;
+        holerite.valorTotalHoraExtra = contrato.valorHoraExtra * contrato.horaExtraTrabalhada;
 
-        if (funcionario.possuiFilho())
+        if (holerite.funcionario.possuiFilho())
             holerite.valorAdicional = holerite.calcularValorTotal() * PERCENTUAL_ADICIONAL;
 
         return holerite;
     }
 
-    private Funcionario getFuncionario(ContratoTrabalho contratoTrabalho) {
-        Funcionario funcionario = new Funcionario();
-
-        contratoTrabalho.funcionario = funcionario;
+    private Funcionario construirFuncionario() {
+        Funcionario novoFuncionario = new Funcionario();
 
         System.out.print("Funcionário: ");
-        contratoTrabalho.funcionario.nome = scanner.next();
+        novoFuncionario.nome = scanner.next();
 
         System.out.print("Total de filhos: ");
-        contratoTrabalho.funcionario.quantidadeFilho = scanner.nextInt();
+        novoFuncionario.quantidadeFilho = scanner.nextInt();
+
+        return novoFuncionario;
+    }
+
+    private ContratoTrabalho construirContrato() {
+        ContratoTrabalho contratoTrabalho = new ContratoTrabalho();
 
         System.out.print("Informe o total de horas trabalhadas: ");
         contratoTrabalho.horaTrabalhada = scanner.nextInt();
@@ -43,6 +50,6 @@ public class FolhaPagamento {
         System.out.print("Informe valor por hora extra trabalhadas: ");
         contratoTrabalho.valorHoraExtra = scanner.nextDouble();
 
-        return funcionario;
+        return contratoTrabalho;
     }
 }
