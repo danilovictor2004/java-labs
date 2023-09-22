@@ -5,17 +5,12 @@ public class FolhaPagamento {
 
     Scanner scanner = new Scanner(System.in);
 
-    Holerite calcularSalario() {
-
-        Funcionario funcionario = construirFuncionario();
-        ContratoTrabalho contrato = construirContrato();
+    Holerite calcularSalario(ContratoTrabalho contratoTrabalho) {
 
         Holerite holerite = new Holerite();
-        contrato.funcionario = funcionario;
-        holerite.funcionario = contrato.funcionario;
-        holerite.funcionario.nome = funcionario.nome;
-        holerite.valorTotalHora = contrato.valorHora * contrato.horaTrabalhada;
-        holerite.valorTotalHoraExtra = contrato.valorHoraExtra * contrato.horaExtraTrabalhada;
+        holerite.funcionario = contratoTrabalho.funcionario;
+        holerite.valorTotalHora = contratoTrabalho.valorHora * contratoTrabalho.horaTrabalhada;
+        holerite.valorTotalHoraExtra = contratoTrabalho.valorHoraExtra * contratoTrabalho.horaExtraTrabalhada;
 
         if (holerite.funcionario.possuiFilho())
             holerite.valorAdicional = holerite.calcularValorTotal() * PERCENTUAL_ADICIONAL;
@@ -23,7 +18,7 @@ public class FolhaPagamento {
         return holerite;
     }
 
-    private Funcionario construirFuncionario() {
+    public Funcionario construirFuncionario() {
         Funcionario novoFuncionario = new Funcionario();
 
         System.out.print("Funcionário: ");
@@ -35,7 +30,7 @@ public class FolhaPagamento {
         return novoFuncionario;
     }
 
-    private ContratoTrabalho construirContrato() {
+    public ContratoTrabalho construirContrato() {
         ContratoTrabalho contratoTrabalho = new ContratoTrabalho();
 
         System.out.print("Informe o total de horas trabalhadas: ");
