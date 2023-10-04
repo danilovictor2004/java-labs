@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Especialista-Java.iml" filepath="$PROJECT_DIR$/.idea/Especialista-Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.ArraysObjetos/br.com.algaworks.ArraysObjetos.iml" filepath="$PROJECT_DIR$/br.com.algaworks.ArraysObjetos/br.com.algaworks.ArraysObjetos.iml" />
       <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.arrays/br.com.algaworks.arrays.iml" filepath="$PROJECT_DIR$/br.com.algaworks.arrays/br.com.algaworks.arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.calculadora-imc/br.com.algaworks.calculadora-imc.iml" filepath="$PROJECT_DIR$/br.com.algaworks.calculadora-imc/br.com.algaworks.calculadora-imc.iml" />
       <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.companhia-aerea/br.com.algaworks.companhia-aerea.iml" filepath="$PROJECT_DIR$/br.com.algaworks.companhia-aerea/br.com.algaworks.companhia-aerea.iml" />
