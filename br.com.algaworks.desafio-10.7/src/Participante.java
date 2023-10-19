@@ -1,22 +1,22 @@
-public class Participante {
+import java.util.Objects;
 
-    static final int SALDO_DE_PONTOS = 0;
+public class Participante {
 
     String nome;
     int saldoDePontos;
 
     public Participante(String nome) {
-        this(nome, SALDO_DE_PONTOS);
+        this(nome, 0);
+        Objects.requireNonNull(nome, "Informar o nome é obrigatório");
     }
 
     public Participante(String nome, int saldoDePontos) {
-        this.nome = nome;
-        this.saldoDePontos = saldoDePontos;
-
         if (saldoDePontos < 0) {
-            System.out.println("O saldo de pontos não pode ser menor que zero.");
+            throw new IllegalArgumentException("O saldo de pontos não pode ser menor que zero.");
         }
 
+        this.nome = nome;
+        this.saldoDePontos = saldoDePontos;
     }
 
 }
