@@ -5,7 +5,6 @@ public class Principal {
         Participante participante1 = new Participante("Daniilo", -50);
         Participante participante2 = new Participante("João", 50);
         Participante participante3 = new Participante("José");
-
     }
 
 }
