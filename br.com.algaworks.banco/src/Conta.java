@@ -33,6 +33,10 @@ public class Conta {
         return saldo;
     }
 
+    protected void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     public void depositar(double valorDeposito) {
         if (valorDeposito < 0) {
             throw new IllegalArgumentException("Valor do depósito deve ser maior que 0");
@@ -46,11 +50,15 @@ public class Conta {
             throw new IllegalArgumentException("Valor do saque deve ser maior que 0");
         }
 
+        validarSaldoParaSaque(valorSaque);
+
+        saldo -= valorSaque;
+    }
+
+    protected void validarSaldoParaSaque(double valorSaque) {
         if (saldo < valorSaque) {
             throw new IllegalArgumentException("Saldo insuficiente para saque");
         }
-
-        saldo -= valorSaque;
     }
 
     public void imprimirDemonstrativo() {
