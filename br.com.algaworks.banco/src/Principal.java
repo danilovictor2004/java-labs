@@ -7,6 +7,8 @@ public class Principal {
         ContaEspecial conta1 = new ContaEspecial(new Titular("João da Silva", "12312312300"),
                 1234, 999999, 90);
         conta1.setLimiteChequeEspecial(1000);
+        conta1.depositar(100);
+        conta1.creditarRendimento(10);
 
         ContaEspecial conta2 = new ContaEspecial(new Titular("Maria Joana", "98798798700"),
                 2222, 888888, 90);
@@ -16,9 +18,11 @@ public class Principal {
 
         conta3.depositar(300);
 
-        caixaEletronico.transferir(conta1, conta3, 50);
-        conta1.imprimirDemonstrativo();
-        conta3.imprimirDemonstrativo();
+        caixaEletronico.imprimirDemonstrativo(conta3);
+
+//        caixaEletronico.transferir(conta1, conta3, 50);
+//        conta1.imprimirDemonstrativo();
+//        conta3.imprimirDemonstrativo();
 
     }
 
