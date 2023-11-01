@@ -31,6 +31,10 @@ public class Conta {
         return saldo;
     }
 
+    public boolean possuiGratuidadeImpressao() {
+        return false;
+    }
+
     public void depositar(double valorDeposito) {
         if (valorDeposito < 0) {
             throw new IllegalArgumentException("Valor do depósito deve ser maior que 0");
