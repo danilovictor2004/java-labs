@@ -16,16 +16,8 @@ public class ImovelResidencial implements BemSeguravel {
         return valorMercado;
     }
 
-    public void setValorMercado(double valorMercado) {
-        this.valorMercado = valorMercado;
-    }
-
     public int getAreaConstruida() {
         return AreaConstruida;
-    }
-
-    public void setAreaConstruida(int areaConstruida) {
-        AreaConstruida = areaConstruida;
     }
 
     @Override
@@ -35,8 +27,7 @@ public class ImovelResidencial implements BemSeguravel {
 
     @Override
     public String descrever() {
-        return String.format("Imóvel residencial com %dm2 de área construída, avaliado em R$%.2f%n" +
-                        "Prêmio: R$ %.2f",
-                getAreaConstruida(), getValorMercado(), calcularValorPremio());
+        return String.format("Imóvel residencial com %dm2 de área construída, avaliado em R$%.2f%n",
+                getAreaConstruida(), getValorMercado());
     }
 }
