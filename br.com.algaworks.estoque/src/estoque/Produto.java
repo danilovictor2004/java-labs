@@ -1,5 +1,8 @@
 package estoque;
 
+import exceptions.ProdutoInativoException;
+import exceptions.ProdutoSemEstoqueException;
+
 import java.util.Objects;
 
 public class Produto {
@@ -51,11 +54,11 @@ public class Produto {
         }
 
         if (isInativo()) {
-            throw new IllegalStateException("Retirada no estoque não pode ser realizada em produtos inativos");
+            throw new ProdutoInativoException("Retirada no estoque não pode ser realizada em produtos inativos");
         }
 
         if (this.quantidadeEstoque - quantidade < 0) {
-            throw new IllegalArgumentException("Quantidade inválida porque estoque ficaria negativo");
+            throw new ProdutoSemEstoqueException("Quantidade inválida porque estoque ficaria negativo");
         }
 
         this.quantidadeEstoque -= quantidade;
