@@ -1,4 +1,6 @@
 import estoque.Produto;
+import exceptions.ProdutoInativoException;
+import exceptions.ProdutoSemEstoqueException;
 
 import java.util.Scanner;
 
@@ -24,9 +26,9 @@ public class Principal {
                 System.out.println("Compra realizada.");
 
                 break;
-            } catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException | ProdutoSemEstoqueException e) {
                 System.out.println("Erro na compra: " + e.getMessage());
-            } catch (IllegalStateException e) {
+            } catch (ProdutoInativoException e) {
                 System.out.println("Erro na compra: " + e.getMessage());
 
                 System.out.print("Deseja ativar o produto? ");
