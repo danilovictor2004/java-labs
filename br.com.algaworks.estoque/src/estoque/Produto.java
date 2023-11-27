@@ -48,7 +48,7 @@ public class Produto {
         this.ativo = false;
     }
 
-    public void retirarEstoque(int quantidade) {
+    public void retirarEstoque(int quantidade) throws ProdutoInativoException, ProdutoSemEstoqueException{
         if (quantidade < 0) {
             throw new IllegalArgumentException("Quantidade não pode ser negativa para retirada no estoque");
         }
@@ -58,7 +58,7 @@ public class Produto {
         }
 
         if (this.quantidadeEstoque - quantidade < 0) {
-            throw new ProdutoSemEstoqueException("Quantidade inválida porque estoque ficaria negativo");
+            throw new ProdutoSemEstoqueException("Estoque insuficiente", this.quantidadeEstoque, quantidade);
         }
 
         this.quantidadeEstoque -= quantidade;

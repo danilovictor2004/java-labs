@@ -1,4 +1,5 @@
 import estoque.Produto;
+import exceptions.ProdutoException;
 import exceptions.ProdutoInativoException;
 import exceptions.ProdutoSemEstoqueException;
 
@@ -26,8 +27,9 @@ public class Principal {
                 System.out.println("Compra realizada.");
 
                 break;
-            } catch (IllegalArgumentException | ProdutoSemEstoqueException e) {
-                System.out.println("Erro na compra: " + e.getMessage());
+            } catch (ProdutoSemEstoqueException e) {
+                System.out.printf("Erro na compra: %s. Estoque disponível: %d. Estoque necessário: %d%n",
+                        e.getMessage(), e.getEstoqueDisponivel(), e.getEstoqueNecessario());
             } catch (ProdutoInativoException e) {
                 System.out.println("Erro na compra: " + e.getMessage());
 
@@ -40,12 +42,14 @@ public class Principal {
                     System.out.println("Ok. Compra não pode ser realizada.");
                     break;
                 }
+            } catch (ProdutoException e) {
+                System.out.println("Erro na compra: " + e.getMessage());
             }
         } while (true);
 
     }
 
-    private static void efetuarBaixaEstoque(Produto produto, int quantidade) {
+    private static void efetuarBaixaEstoque(Produto produto, int quantidade) throws ProdutoSemEstoqueException, ProdutoInativoException{
         produto.retirarEstoque(quantidade);
         System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n",
                 quantidade, produto.getQuantidadeEstoque());
