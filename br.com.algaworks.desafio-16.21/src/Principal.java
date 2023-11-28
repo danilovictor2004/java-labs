@@ -1,3 +1,5 @@
+import Model.ContaCorrente;
+
 public class Principal {
 
     public static void main(String[] args) {
