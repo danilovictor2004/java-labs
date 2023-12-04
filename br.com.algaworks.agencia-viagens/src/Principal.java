@@ -13,6 +13,7 @@ public class Principal {
         cadastro.adicionar(new Hotel("Hotel Fazenda Dona Carolina", "Itatiba/SP", 2200));
         cadastro.adicionar(new Hotel("Tivoli Ecoresort", "Praia do Forte/BA", 2000));
         cadastro.adicionar(new Hotel("Mercure", "Uberlândia", 400));
+        cadastro.adicionar(new Hotel("Jaguaribe Lodge", "Fortim/CE", 1300));
 
         ArrayList<Hotel> hoteis = cadastro.obterTodos();
         imprimirHoteis(hoteis);
