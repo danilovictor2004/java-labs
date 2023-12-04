@@ -1,6 +1,6 @@
 package Estoque;
 
-public class Roupa<T> implements Estocavel {
+public class Roupa implements Estocavel {
 
     private String descricao;
     private int quantidadeEstoque;
