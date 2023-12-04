@@ -1,6 +1,6 @@
 package Estoque;
 
-public class Carro<T> implements Estocavel {
+public class Carro implements Estocavel {
 
     private String modelo;
     private int quantidadeEstoque;
