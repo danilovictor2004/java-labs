@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class CadastroHotel {
 
-    private final ArrayList hoteis = new ArrayList();
+    private final ArrayList<Hotel> hoteis = new ArrayList<>();
 
     public void adicionar(Hotel hotel) {
         hoteis.add(hotel);
     }
 
-    public ArrayList obterTodos() {
+    public ArrayList<Hotel> obterTodos() {
         return hoteis;
     }
 }
