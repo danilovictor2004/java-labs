@@ -13,9 +13,21 @@ public class Principal {
         cadastro.adicionar(new Hotel("Hotel Fazenda Dona Carolina", "Itatiba/SP", 2200));
         cadastro.adicionar(new Hotel("Tivoli Ecoresort", "Praia do Forte/BA", 2000));
         cadastro.adicionar(new Hotel("Mercure", "Uberlândia", 400));
-        cadastro.adicionar(new Hotel("Jaguaribe Lodge", "Fortim/CE", 1300));
+        //cadastro.adicionar(new Hotel("Jaguaribe Lodge", "Fortim/CE", 1300));
 
         ArrayList<Hotel> hoteis = cadastro.obterTodos();
+        imprimirHoteis(hoteis);
+        System.out.println();
+
+        cadastro.remover(new Hotel("Tivoli Ecoresort", "Praia do Forte/BA", 0));
+        imprimirHoteis(hoteis);
+        System.out.println();
+
+        cadastro.removerPorCidade("Fortim/CE");
+        imprimirHoteis(hoteis);
+        System.out.println();
+
+        cadastro.removerTodos();
         imprimirHoteis(hoteis);
 
     }

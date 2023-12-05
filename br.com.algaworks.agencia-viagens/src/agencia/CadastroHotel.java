@@ -25,7 +25,7 @@ public class CadastroHotel {
     public void removerPorCidade(String cidade) {
         ArrayList<Hotel> hoteisParaRemocao = new ArrayList<>();
 
-        for (int i = 0; i < hoteisParaRemocao.size(); i++) {
+        for (int i = 0; i < hoteis.size(); i++) {
             Hotel hotel = hoteis.get(i);
 
             if (hotel.getCidade().equals(cidade)) {
