@@ -44,6 +44,8 @@ public class CadastroHotel {
         }
     }
 
-
+    public void removerTodos() {
+        hoteis.clear();
+    }
 
 }
