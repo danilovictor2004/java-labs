@@ -1,6 +1,7 @@
 package agencia;
 
 import exceptions.HotelExistenteException;
+import exceptions.HotelNaoEncontradoException;
 
 import java.util.ArrayList;
 
@@ -34,5 +35,15 @@ public class CadastroHotel {
 
         hoteis.removeAll(hoteisParaRemocao);
     }
+
+    public void remover(Hotel hotel) {
+        boolean removido = hoteis.remove(hotel);
+
+        if(!removido) {
+            throw new HotelNaoEncontradoException("Hotel não encontrado para remoção.");
+        }
+    }
+
+
 
 }
