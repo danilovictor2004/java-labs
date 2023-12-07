@@ -2,6 +2,7 @@ import agencia.CadastroHotel;
 import agencia.Hotel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Principal {
 
@@ -15,7 +16,7 @@ public class Principal {
         cadastro.adicionar(new Hotel("Mercure", "Uberlândia", 400));
         //cadastro.adicionar(new Hotel("Jaguaribe Lodge", "Fortim/CE", 1300));
 
-        ArrayList<Hotel> hoteis = cadastro.obterTodos();
+        List<Hotel> hoteis = cadastro.obterTodos();
         imprimirHoteis(hoteis);
         System.out.println();
 
@@ -32,7 +33,7 @@ public class Principal {
 
     }
 
-    private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
+    private static void imprimirHoteis(List<Hotel> hoteis) {
         for (Hotel hotel : hoteis) {
             System.out.printf("%s (%s) -> %.2f%n",
                     hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
