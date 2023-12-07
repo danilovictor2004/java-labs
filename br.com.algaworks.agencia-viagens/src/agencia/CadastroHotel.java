@@ -4,10 +4,11 @@ import exceptions.HotelExistenteException;
 import exceptions.HotelNaoEncontradoException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CadastroHotel {
 
-    private final ArrayList<Hotel> hoteis = new ArrayList<>();
+    private final List<Hotel> hoteis = new ArrayList<>();
 
     public void adicionar(Hotel hotel) {
 
@@ -18,16 +19,14 @@ public class CadastroHotel {
         hoteis.add(hotel);
     }
 
-    public ArrayList<Hotel> obterTodos() {
+    public List<Hotel> obterTodos() {
         return hoteis;
     }
 
     public void removerPorCidade(String cidade) {
-        ArrayList<Hotel> hoteisParaRemocao = new ArrayList<>();
+        List<Hotel> hoteisParaRemocao = new ArrayList<>();
 
-        for (int i = 0; i < hoteis.size(); i++) {
-            Hotel hotel = hoteis.get(i);
-
+        for (Hotel hotel : hoteis) {
             if (hotel.getCidade().equals(cidade)) {
                 hoteisParaRemocao.add(hotel);
             }
