@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class PacoteViagem {
+public class PacoteViagem implements Comparable<PacoteViagem>{
 
     private String descricao;
     private double precoPorPessoa;
@@ -56,7 +56,10 @@ public class PacoteViagem {
         return descricao.hashCode();
     }
 
-
     // TODO implementar compareTo
+    @Override
+    public int compareTo(PacoteViagem o) {
+        return getDescricao().compareTo(o.getDescricao());
+    }
 
 }
