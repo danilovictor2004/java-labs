@@ -14,10 +14,10 @@ public class Principal {
         cadastro.ordenar();
 //        cadastro.ordenarPorPrecoDecrescente();
 
-//        PacoteViagem pacoteEncontrado = cadastro.buscarPorDescricao("Disney (7 noites)");
-//        System.out.println(pacoteEncontrado);
+        PacoteViagem pacoteEncontrado = cadastro.buscarPorDescricao("Disney (10 noites)");
+        System.out.println(pacoteEncontrado);
 
-        imprimirPacotes(cadastro.obterTodos());
+        //imprimirPacotes(cadastro.obterTodos());
     }
 
     private static void imprimirPacotes(List<PacoteViagem> pacotes) {

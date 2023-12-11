@@ -1,32 +1,33 @@
 import Execptions.PacoteCadastradoException;
+import Execptions.PacoteNaoEncontradoException;
 
 import java.util.*;
 
 public class CadastroPacoteViagem {
 
     // TODO declarar lista de pacotes de viagem aqui
-    private final List<PacoteViagem> pacote = new ArrayList<>();
+    private final List<PacoteViagem> pacotes = new ArrayList<>();
 
     public void adicionar(String descricao, double precoDiaria) {
         // TODO adicionar pacote na lista, validando antes se
         //  já existe usando contains (lançar exceção)
 
-        if (pacote.contains(new PacoteViagem(descricao, precoDiaria))) {
+        if (pacotes.contains(new PacoteViagem(descricao, precoDiaria))) {
             throw new PacoteCadastradoException("Pacote já cadastrado.");
         }
 
-        pacote.add(new PacoteViagem(descricao, precoDiaria));
+        pacotes.add(new PacoteViagem(descricao, precoDiaria));
 
     }
 
     public List<PacoteViagem> obterTodos() {
         // TODO retornar lista de pacotes
-        return pacote;
+        return pacotes;
     }
 
     public void ordenar() {
         // TODO ordenar pacotes pela ordem natural
-        Collections.sort(pacote);
+        Collections.sort(pacotes);
     }
 
     public void ordenarPorPrecoDecrescente() {
@@ -41,7 +42,13 @@ public class CadastroPacoteViagem {
     public PacoteViagem buscarPorDescricao(String descricao) {
         // TODO iterar pacotes com enhanced for, localizar e retornar
         //  pacote com descrição informada (ou lançar exceção se não encontrar)
-        return null;
+        for (PacoteViagem pacote : pacotes) {
+            if (pacote.getDescricao().equals(descricao)) {
+                return pacote;
+            }
+        }
+
+        throw new PacoteNaoEncontradoException("Pacote de viagem não encontrado.");
     }
 
 }
