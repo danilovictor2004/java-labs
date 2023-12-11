@@ -40,7 +40,6 @@ public class PacoteViagem implements Comparable<PacoteViagem>{
                 '}';
     }
 
-    // TODO implementar equals e hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,7 +55,6 @@ public class PacoteViagem implements Comparable<PacoteViagem>{
         return descricao.hashCode();
     }
 
-    // TODO implementar compareTo
     @Override
     public int compareTo(PacoteViagem o) {
         return getDescricao().compareTo(o.getDescricao());
