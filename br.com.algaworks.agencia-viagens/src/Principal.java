@@ -16,8 +16,17 @@ public class Principal {
         cadastro.adicionar(new Hotel("Mercure", "Uberlândia", 400));
         //cadastro.adicionar(new Hotel("Jaguaribe Lodge", "Fortim/CE", 1300));
 
+
         List<Hotel> hoteis = cadastro.obterTodos();
+
         imprimirHoteis(hoteis);
+        System.out.println();
+
+        cadastro.ordenarPorPreco();
+        System.out.println();
+
+        imprimirHoteis(hoteis);
+
         System.out.println();
 
         cadastro.remover(new Hotel("Tivoli Ecoresort", "Praia do Forte/BA", 0));

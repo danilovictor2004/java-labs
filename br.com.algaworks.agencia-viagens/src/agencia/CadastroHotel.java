@@ -4,6 +4,7 @@ import exceptions.HotelExistenteException;
 import exceptions.HotelNaoEncontradoException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CadastroHotel {
@@ -17,6 +18,10 @@ public class CadastroHotel {
         }
 
         hoteis.add(hotel);
+    }
+
+    public void ordenarPorPreco() {
+        Collections.sort(hoteis);
     }
 
     public List<Hotel> obterTodos() {
