@@ -22,6 +22,7 @@ public class Principal {
 
     private static void imprimirPacotes(List<PacoteViagem> pacotes) {
         // TODO iterar nos pacotes e imprimir descrição e preço
+
     }
 
 }
