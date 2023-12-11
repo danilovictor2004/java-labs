@@ -26,6 +26,7 @@ public class CadastroPacoteViagem {
 
     public void ordenar() {
         // TODO ordenar pacotes pela ordem natural
+        Collections.sort(pacote);
     }
 
     public void ordenarPorPrecoDecrescente() {

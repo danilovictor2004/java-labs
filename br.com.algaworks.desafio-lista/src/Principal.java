@@ -11,7 +11,7 @@ public class Principal {
 
 //        cadastro.removerPorDescricao("Disney (7 noites)");
 
-//        cadastro.ordenar();
+        cadastro.ordenar();
 //        cadastro.ordenarPorPrecoDecrescente();
 
 //        PacoteViagem pacoteEncontrado = cadastro.buscarPorDescricao("Disney (7 noites)");
@@ -23,7 +23,8 @@ public class Principal {
     private static void imprimirPacotes(List<PacoteViagem> pacotes) {
         // TODO iterar nos pacotes e imprimir descrição e preço
         for (PacoteViagem pacote : pacotes) {
-            System.out.println(pacote.getDescricao());
+            System.out.printf("Viagem para %s custa R$%.2f por pessoa%n ",
+                    pacote.getDescricao(), pacote.getPrecoPorPessoa());
         }
 
     }
