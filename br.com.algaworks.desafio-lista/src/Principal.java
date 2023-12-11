@@ -12,12 +12,15 @@ public class Principal {
 //        cadastro.removerPorDescricao("Disney (7 noites)");
 
         cadastro.ordenar();
-//        cadastro.ordenarPorPrecoDecrescente();
+        cadastro.ordenarPorPrecoDecrescente();
 
         PacoteViagem pacoteEncontrado = cadastro.buscarPorDescricao("Disney (10 noites)");
-        System.out.println(pacoteEncontrado);
+        System.out.printf("Encontrado um pacote de viagem para %s que custa R$%.2f por pessoa%n ",
+                pacoteEncontrado.getDescricao(), pacoteEncontrado.getPrecoPorPessoa());
 
-        //imprimirPacotes(cadastro.obterTodos());
+        System.out.println();
+
+        imprimirPacotes(cadastro.obterTodos());
     }
 
     private static void imprimirPacotes(List<PacoteViagem> pacotes) {

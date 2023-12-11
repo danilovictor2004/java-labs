@@ -32,6 +32,7 @@ public class CadastroPacoteViagem {
 
     public void ordenarPorPrecoDecrescente() {
         // TODO ordenar pacotes pelo preço (decrescente)
+        pacotes.sort(new PrecoPacoteDescrecente().reversed());
     }
 
     public void removerPorDescricao(String descricao) {
