@@ -22,6 +22,9 @@ public class Principal {
 
     private static void imprimirPacotes(List<PacoteViagem> pacotes) {
         // TODO iterar nos pacotes e imprimir descrição e preço
+        for (PacoteViagem pacote : pacotes) {
+            System.out.println(pacote.getDescricao());
+        }
 
     }
 
