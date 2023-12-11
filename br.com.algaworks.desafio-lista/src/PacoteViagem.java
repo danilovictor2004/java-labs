@@ -41,6 +41,21 @@ public class PacoteViagem {
     }
 
     // TODO implementar equals e hashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PacoteViagem that = (PacoteViagem) o;
+
+        return descricao.equals(that.descricao);
+    }
+
+    @Override
+    public int hashCode() {
+        return descricao.hashCode();
+    }
+
 
     // TODO implementar compareTo
 
