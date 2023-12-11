@@ -1,12 +1,22 @@
+import Execptions.PacoteCadastradoException;
+
 import java.util.*;
 
 public class CadastroPacoteViagem {
 
     // TODO declarar lista de pacotes de viagem aqui
+    private final List<PacoteViagem> pacote = new ArrayList<>();
 
     public void adicionar(String descricao, double precoDiaria) {
         // TODO adicionar pacote na lista, validando antes se
         //  já existe usando contains (lançar exceção)
+
+        if (pacote.contains(new PacoteViagem(descricao, precoDiaria))) {
+            throw new PacoteCadastradoException("Pacote já cadastrado.");
+        }
+
+        pacote.add(new PacoteViagem(descricao, precoDiaria));
+
     }
 
     public List<PacoteViagem> obterTodos() {
