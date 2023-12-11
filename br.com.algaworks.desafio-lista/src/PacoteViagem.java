@@ -12,8 +12,8 @@ public class PacoteViagem implements Comparable<PacoteViagem>{
             throw new IllegalArgumentException("Preço por pessoa não pode ser negativo");
         }
 
-        this.descricao = descricao;
-        this.precoPorPessoa = precoPorPessoa;
+        setDescricao(descricao);
+        setPrecoPorPessoa(precoPorPessoa);
     }
 
     public String getDescricao() {
