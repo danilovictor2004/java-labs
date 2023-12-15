@@ -1,6 +1,8 @@
 package Model;
 
-public class Cidade {
+import java.util.Comparator;
+
+public class Cidade implements Comparable<Cidade> {
 
     private int codigoIbge;
     private String nome;
@@ -58,5 +60,11 @@ public class Cidade {
     @Override
     public int hashCode() {
         return codigoIbge;
+    }
+
+
+    @Override
+    public int compareTo(Cidade o) {
+        return Integer.compare(getCodigoIbge(), o.getCodigoIbge());
     }
 }

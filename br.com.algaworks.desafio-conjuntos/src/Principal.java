@@ -1,18 +1,18 @@
 import Model.Cidade;
 
-import java.util.Set;
+import java.util.*;
 
 public class Principal {
 
     public static void main(String[] args) {
         // Performance é mais importante (não garante a ordem dos elementos)
-        Set<Cidade> cidades = null;
+//        Set<Cidade> cidades = new HashSet<>();
 
         // Performance é importante, mas precisa manter ordem de inserção dos elementos
-//        Set<Cidade> cidades = null;
+//        Set<Cidade> cidades = new LinkedHashSet<>();
 
         // Performance é menos importante e precisa manter a ordem natural dos elementos
-//        Set<Cidade> cidades = null;
+        Set<Cidade> cidades = new TreeSet<>();
 
         cidades.add(new Cidade(3170206, "Uberlândia", 706_597));
         cidades.add(new Cidade(3170107, "Uberaba", 340_277));
@@ -22,6 +22,9 @@ public class Principal {
         cidades.add(new Cidade(1100205, "Porto Velho", 548_952));
 
         // TODO Iterar no conjunto de cidades
+        for (Cidade cidade : cidades) {
+            System.out.printf("Código IBGE: %d -> %s%n", cidade.getCodigoIbge(), cidade.getNome());
+        }
     }
 
 }
