@@ -1,3 +1,5 @@
+import Model.Cidade;
+
 import java.util.Set;
 
 public class Principal {
