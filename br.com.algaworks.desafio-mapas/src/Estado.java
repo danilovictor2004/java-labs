@@ -2,8 +2,8 @@ import java.util.Objects;
 
 public class Estado {
 
-    private String sigla;
-    private String nome;
+    private final String sigla;
+    private final String nome;
 
     public Estado(String sigla, String nome) {
         Objects.requireNonNull(sigla);
@@ -26,6 +26,21 @@ public class Estado {
                 "sigla='" + sigla + '\'' +
                 ", nome='" + nome + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Estado estado = (Estado) o;
+
+        return sigla.equals(estado.sigla);
+    }
+
+    @Override
+    public int hashCode() {
+        return sigla.hashCode();
     }
 
 }
