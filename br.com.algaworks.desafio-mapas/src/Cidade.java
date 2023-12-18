@@ -43,4 +43,18 @@ public class Cidade {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cidade cidade = (Cidade) o;
+
+        return codigoIbge == cidade.codigoIbge;
+    }
+
+    @Override
+    public int hashCode() {
+        return codigoIbge;
+    }
 }
