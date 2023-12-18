@@ -25,6 +25,12 @@ public class Principal {
         proprietarios.put(ford, jose);
         proprietarios.put(porsche, maria);
 
+        // Iterar e exibir os registros no Map
+        for (var entry : proprietarios.entrySet()) {
+            System.out.printf("%s (%s) = %s%n", entry.getKey().getPlaca(),
+                    entry.getKey().getModelo(), entry.getValue().getNome());
+        }
+
     }
 
 }
