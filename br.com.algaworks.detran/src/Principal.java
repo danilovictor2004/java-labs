@@ -1,6 +1,9 @@
 import Model.Carro;
 import Model.Proprietario;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Principal {
 
     public static void main(String[] args) {
@@ -14,6 +17,13 @@ public class Principal {
         Carro honda = new Carro("WOR9K87", "Honda HR-V");
         Carro ford = new Carro("JAV5A67", "Ford Ka");
         Carro porsche = new Carro("EJA0V44", "Porsche 911");
+
+        // Adiciona registros no mapa
+        Map<Carro, Proprietario> proprietarios = new HashMap<>();
+        proprietarios.put(bmw, maria);
+        proprietarios.put(honda, ana);
+        proprietarios.put(ford, jose);
+        proprietarios.put(porsche, maria);
 
     }
 
