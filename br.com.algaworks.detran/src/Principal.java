@@ -31,6 +31,16 @@ public class Principal {
                     entry.getKey().getModelo(), entry.getValue().getNome());
         }
 
+        // Remove o valor do mapa
+        proprietarios.remove(ford);
+        System.out.println();
+
+        // Iterar e exibir os registros no Map
+        for (var entry : proprietarios.entrySet()) {
+            System.out.printf("%s (%s) = %s%n", entry.getKey().getPlaca(),
+                    entry.getKey().getModelo(), entry.getValue().getNome());
+        }
+
     }
 
 }
