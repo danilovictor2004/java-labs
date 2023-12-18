@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Estado {
+public class Estado implements Comparable<Estado>{
 
     private final String sigla;
     private final String nome;
@@ -43,4 +43,8 @@ public class Estado {
         return sigla.hashCode();
     }
 
+    @Override
+    public int compareTo(Estado o) {
+        return getSigla().compareTo(o.getSigla());
+    }
 }
