@@ -1,9 +1,9 @@
 public class ExtracaoNome {
 
     public static void main(String[] args) {
-        String nome = "João Silva Souza";
+        String nome = "João José da Silva";
 
-        System.out.println(obterSobrenome(nome));
+        System.out.println(obterUltimoNome(nome));
     }
 
     private static String obterSobrenome(String nome) {
@@ -26,6 +26,16 @@ public class ExtracaoNome {
 
         return nome.substring(posicaoPrimeiroEspaco + 1,
                 posicaoSegundoNome < 0 ? nome.length() : posicaoSegundoNome);
+    }
+
+    private static String obterUltimoNome(String nome) {
+        int posicaoUltimoNome = nome.lastIndexOf(" ");
+
+        if (posicaoUltimoNome < 0) {
+            throw new RuntimeException("Não é um nome completo.");
+        }
+
+        return nome.substring(posicaoUltimoNome + 1);
     }
 
 }
