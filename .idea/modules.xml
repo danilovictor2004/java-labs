@@ -39,6 +39,7 @@
       <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.portaria/br.com.algaworks.portaria.iml" filepath="$PROJECT_DIR$/br.com.algaworks.portaria/br.com.algaworks.portaria.iml" />
       <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.precificacao/br.com.algaworks.precificacao.iml" filepath="$PROJECT_DIR$/br.com.algaworks.precificacao/br.com.algaworks.precificacao.iml" />
       <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.sorteio/br.com.algaworks.sorteio.iml" filepath="$PROJECT_DIR$/br.com.algaworks.sorteio/br.com.algaworks.sorteio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br.com.algaworks.valida-email/br.com.algaworks.valida-email.iml" filepath="$PROJECT_DIR$/br.com.algaworks.valida-email/br.com.algaworks.valida-email.iml" />
     </modules>
   </component>
 </project>
