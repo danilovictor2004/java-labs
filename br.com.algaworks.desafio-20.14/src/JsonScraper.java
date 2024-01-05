@@ -1,3 +1,4 @@
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class JsonScraper {
@@ -16,6 +17,14 @@ public class JsonScraper {
                     "id": 3,
                     "nome": "Sebastião Carvalho"
                 }""";
+
+        String regex = ".*?\"nome\":\\s*\"(?<nome>.*?)\".*?";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(json);
+
+        while (matcher.find()) {
+            System.out.println(matcher.group("nome"));
+        }
 
     }
 
