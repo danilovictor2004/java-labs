@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CalculadoraParcelas {
 
-    public static List<Date> calcular(Date dataPrimeiraParcela, int quantidadeParcela) {
+    public List<Date> calcular(Date dataPrimeiraParcela, int quantidadeParcela) {
         // Pega a data e hora corrente
         Calendar calendar = Calendar.getInstance();
         // Atribui uma nova data conforme o valor passado no parametro
@@ -42,7 +42,5 @@ public class CalculadoraParcelas {
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
     }
-
-
 
 }
