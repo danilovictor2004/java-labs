@@ -1,6 +1,3 @@
-import java.sql.SQLOutput;
-import java.text.Normalizer;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
