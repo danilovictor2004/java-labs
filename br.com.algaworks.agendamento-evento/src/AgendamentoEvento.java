@@ -1,5 +1,7 @@
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.FormatStyle;
@@ -17,6 +19,13 @@ public class AgendamentoEvento {
 
     public static void main(String[] args) {
 
+        LocalDate dataEvento = requisitarData("Data do evento: ");
+        LocalTime horaEvento = requisitarHora("Horário de evento: ");
+
+        LocalDateTime dataHoraEvento = dataEvento.atTime(LocalTime.from(horaEvento));
+
+        System.out.printf("Evento agendado para %s%n", dataHoraEvento.format(FORMATADOR_COMPLETO_BRASIL));
+
     }
 
     private static LocalDate requisitarData(String descricao) {
@@ -24,7 +33,6 @@ public class AgendamentoEvento {
             try {
                 System.out.print(descricao);
                 String dataTexto = ENTRADA.nextLine();
-                ENTRADA.close();
 
                 return LocalDate.parse(dataTexto, FORMATADOR_DATA);
             } catch (DateTimeParseException e) {
@@ -33,13 +41,13 @@ public class AgendamentoEvento {
         }
     }
 
-    private static LocalDate requisitarHora(String descricao) {
+    private static LocalTime requisitarHora(String descricao) {
         while (true) {
             try {
                 System.out.print(descricao);
                 String horarioTexto = ENTRADA.nextLine();
 
-                return LocalDate.parse(horarioTexto, FORMATADOR_HORARIO);
+                return LocalTime.parse(horarioTexto, FORMATADOR_HORARIO);
             } catch (DateTimeParseException e) {
                 System.out.println("Horário inválido. Tente novamente.");
             }
