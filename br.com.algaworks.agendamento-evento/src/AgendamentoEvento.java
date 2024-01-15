@@ -24,10 +24,24 @@ public class AgendamentoEvento {
             try {
                 System.out.print(descricao);
                 String dataTexto = ENTRADA.nextLine();
+                ENTRADA.close();
 
                 return LocalDate.parse(dataTexto, FORMATADOR_DATA);
             } catch (DateTimeParseException e) {
                 System.out.println("Data inválida. Tente novamente.");
+            }
+        }
+    }
+
+    private static LocalDate requisitarHora(String descricao) {
+        while (true) {
+            try {
+                System.out.print(descricao);
+                String horarioTexto = ENTRADA.nextLine();
+
+                return LocalDate.parse(horarioTexto, FORMATADOR_HORARIO);
+            } catch (DateTimeParseException e) {
+                System.out.println("Horário inválido. Tente novamente.");
             }
         }
     }
