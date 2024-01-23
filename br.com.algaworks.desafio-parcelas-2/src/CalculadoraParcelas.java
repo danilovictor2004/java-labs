@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class CalculadoraParcelas {
@@ -8,10 +9,16 @@ public class CalculadoraParcelas {
     private static final Scanner ENTRADA = new Scanner(System.in);
 
     private LocalDate dataVencimento() {
-        System.out.print("Data da primeira parcela: ");
-        String data = ENTRADA.nextLine();
+        while (true) {
+            try {
+                System.out.print("Data da primeira parcela: ");
+                String data = ENTRADA.nextLine();
 
-        return LocalDate.parse(data, FORMATADOR);
+                return LocalDate.parse(data, FORMATADOR);
+            } catch (DateTimeParseException e) {
+                System.out.println("Data inválida. Tente novamente");
+            }
+        }
     }
 
     private int totalParcelas() {
