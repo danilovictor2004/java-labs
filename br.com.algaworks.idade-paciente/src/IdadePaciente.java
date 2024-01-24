@@ -11,16 +11,15 @@ public class IdadePaciente {
     private static final DateTimeFormatter FORMATADOR_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static void main(String[] args) {
-        LocalDate dataNascimento = requisitarData("Data de nascimento: ");
+        LocalDate dataNascimento = requisitarData();
         Period tempoDeVida = dataNascimento.until(ChronoLocalDate.from(LocalDate.now()));
-
         System.out.printf("Paciente tem %s de vida%n", formatarPeriodo(tempoDeVida));
     }
 
-    private static LocalDate requisitarData(String descricao) {
+    private static LocalDate requisitarData() {
         while (true) {
             try {
-                System.out.print(descricao);
+                System.out.print("Data de nascimento: ");
                 String dataTexto = ENTRADA.nextLine();
 
                 return LocalDate.parse(dataTexto, FORMATADOR_DATA);
