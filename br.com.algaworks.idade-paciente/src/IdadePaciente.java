@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
@@ -23,6 +24,13 @@ public class IdadePaciente {
                 System.out.println("Data inválido. Tente novamente.");
             }
         }
+    }
+
+    private static String formatarPeriodo(Period tempoDeVida) {
+        return String.format("%d ano%s, %d %s e %d dia%s",
+                tempoDeVida.getYears(), tempoDeVida.getYears() > 1 ? "s" : "",
+                tempoDeVida.getMonths(), tempoDeVida.getMonths() > 1 ? "meses" : "",
+                tempoDeVida.getDays(), tempoDeVida.getDays() > 1 ? "s" : "");
     }
 
 }
