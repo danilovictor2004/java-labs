@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
@@ -10,7 +11,10 @@ public class IdadePaciente {
     private static final DateTimeFormatter FORMATADOR_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static void main(String[] args) {
+        LocalDate dataNascimento = requisitarData("Data de nascimento: ");
+        Period tempoDeVida = dataNascimento.until(ChronoLocalDate.from(LocalDate.now()));
 
+        System.out.printf("Paciente tem %s de vida%n", formatarPeriodo(tempoDeVida));
     }
 
     private static LocalDate requisitarData(String descricao) {
