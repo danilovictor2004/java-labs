@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
@@ -25,5 +26,19 @@ public class ConviteFesta {
             }
         }
     }
+
+    private static LocalTime requisitarHora() {
+        while (true) {
+            try {
+                System.out.print("Hora da festa: ");
+                String horaTexto = ENTRADA.nextLine();
+
+                return LocalTime.parse(horaTexto, FORMATADOR_HORARIO);
+            } catch (DateTimeParseException e) {
+                System.out.println("Horário inválido. Tente novamente.");
+            }
+        }
+    }
+
 
 }
