@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
@@ -40,5 +42,22 @@ public class ConviteFesta {
         }
     }
 
+    public void gerarConvite() {
+        LocalDate dataLocalFesta = requisitarData();
+        LocalTime horaFesta = requisitarHora();
+
+        ZonedDateTime dataFestaFusoPadrao = dataLocalFesta.atTime(horaFesta)
+                .atZone(ZoneId.systemDefault());
+        ZonedDateTime dataFestaFusoSaoPaulo = dataLocalFesta.atTime(horaFesta)
+                .atZone(ZoneId.of("America/Sao_Paulo"));
+        ZonedDateTime dataFestaFusoLosAngeles = dataLocalFesta.atTime(horaFesta)
+                .atZone(ZoneId.of("America/Los_Angeles"));
+        ZonedDateTime dataFestaFusoJapao = dataLocalFesta.atTime(horaFesta)
+                .atZone(ZoneId.of("Japan"));
+
+        System.out.println(dataFestaFusoSaoPaulo.format(FORMATADOR_COMPLETO));
+        System.out.println(dataFestaFusoLosAngeles.format(FORMATADOR_COMPLETO));
+        System.out.println(dataFestaFusoJapao.format(FORMATADOR_COMPLETO));
+    }
 
 }
