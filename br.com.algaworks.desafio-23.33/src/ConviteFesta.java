@@ -48,12 +48,12 @@ public class ConviteFesta {
 
         ZonedDateTime dataFestaFusoPadrao = dataLocalFesta.atTime(horaFesta)
                 .atZone(ZoneId.systemDefault());
-        ZonedDateTime dataFestaFusoSaoPaulo = dataLocalFesta.atTime(horaFesta)
-                .atZone(ZoneId.of("America/Sao_Paulo"));
-        ZonedDateTime dataFestaFusoLosAngeles = dataLocalFesta.atTime(horaFesta)
-                .atZone(ZoneId.of("America/Los_Angeles"));
-        ZonedDateTime dataFestaFusoJapao = dataLocalFesta.atTime(horaFesta)
-                .atZone(ZoneId.of("Japan"));
+        ZonedDateTime dataFestaFusoSaoPaulo = dataFestaFusoPadrao
+                .withZoneSameInstant(ZoneId.of("America/Sao_Paulo"));
+        ZonedDateTime dataFestaFusoLosAngeles = dataFestaFusoPadrao
+                .withZoneSameInstant(ZoneId.of("America/Los_Angeles"));
+        ZonedDateTime dataFestaFusoJapao = dataFestaFusoPadrao
+                .withZoneSameInstant(ZoneId.of("Japan"));
 
         System.out.println(dataFestaFusoSaoPaulo.format(FORMATADOR_COMPLETO));
         System.out.println(dataFestaFusoLosAngeles.format(FORMATADOR_COMPLETO));
