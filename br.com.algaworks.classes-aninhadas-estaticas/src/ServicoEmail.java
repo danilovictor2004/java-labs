@@ -5,6 +5,10 @@ public class ServicoEmail {
                 mensagem.getRemetente(), mensagem.getDestinatario(), mensagem.getTexto());
     }
 
+    public static String gerarAssinatura() {
+        return "\n--\nJoão";
+    }
+
     public static class Mensagem {
 
         private final String remetente;
@@ -26,7 +30,7 @@ public class ServicoEmail {
         }
 
         public String getTexto() {
-            return texto;
+            return texto + gerarAssinatura();
         }
 
     }
