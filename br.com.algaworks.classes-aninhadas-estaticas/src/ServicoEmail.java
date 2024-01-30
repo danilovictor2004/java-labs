@@ -16,6 +16,6 @@ public class ServicoEmail {
                 return texto + gerarAssinatura();
             }
 
-        }
+    }
 
 }
