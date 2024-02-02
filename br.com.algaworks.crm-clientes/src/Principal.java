@@ -17,6 +17,9 @@ public class Principal {
         // Expressão lambda
         List<Cliente> clientes = cadastroCliente.consultar(cliente -> cliente.idade() > 40);
 
+        // Ordena clientes por idade
+        clientes.sort((cliente1, cliente2) -> Integer.compare(cliente1.idade(), cliente2.idade()));
+
         for(Cliente cliente : clientes) {
             System.out.printf("%s - %d%n", cliente.nome(), cliente.idade());
         }
