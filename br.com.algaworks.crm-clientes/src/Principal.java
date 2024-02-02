@@ -1,9 +1,8 @@
 import crm.CadastroCliente;
 import crm.Cliente;
-import crm.Filtro;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Principal {
 
@@ -16,10 +15,8 @@ public class Principal {
         cadastroCliente.adicionar(new Cliente("Joaquim", 45));
         cadastroCliente.adicionar(new Cliente("Josefina", 25));
 
-        // Uso da expressão lambda
-        Filtro<Cliente> filtro = (Cliente cliente) -> cliente.idade() > 40;
-
-        List<Cliente> clientes = cadastroCliente.consultar(filtro);
+        // Expressão lambda
+        List<Cliente> clientes = cadastroCliente.consultar(cliente -> cliente.idade() > 40);
 
         for(Cliente cliente : clientes) {
             System.out.printf("%s - %d%n", cliente.nome(), cliente.idade());
