@@ -16,12 +16,8 @@ public class Principal {
         cadastroCliente.adicionar(new Cliente("Joaquim", 45));
         cadastroCliente.adicionar(new Cliente("Josefina", 25));
 
-        Filtro<Cliente> filtro = new Filtro<Cliente>() {
-            @Override
-            public boolean avaliar(Cliente cliente) {
-                return cliente.idade() > 40;
-            }
-        };
+        // Uso da expressão lambda
+        Filtro<Cliente> filtro = (Cliente cliente) -> cliente.idade() > 40;
 
         List<Cliente> clientes = cadastroCliente.consultar(filtro);
 
