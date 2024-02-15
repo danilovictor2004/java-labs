@@ -16,7 +16,11 @@ public class ServicoDeBagagem {
         }
 
         Optional<Reserva> reserva = servicoDeReserva.buscar(codigoReserva);
-        reserva.get().adicionarBagagens(quantidadeBagagens);
+        if (reserva.isPresent()) {
+            reserva.get().adicionarBagagens(quantidadeBagagens);
+        } else {
+            throw new Reserva.ReservaNaoEncontradaException("Reserva não existe.");
+        }
     }
 
 }
