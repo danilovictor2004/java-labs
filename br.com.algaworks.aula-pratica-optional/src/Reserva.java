@@ -45,4 +45,13 @@ public class Reserva {
                 ", quantidadeBagagens=" + quantidadeBagagens +
                 '}';
     }
+
+    static class ReservaNaoEncontradaException extends Exception {
+        public ReservaNaoEncontradaException() {
+        }
+
+        public ReservaNaoEncontradaException(String message) {
+            super(message);
+        }
+    }
 }
