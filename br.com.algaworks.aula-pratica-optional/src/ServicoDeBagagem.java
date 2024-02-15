@@ -1,4 +1,5 @@
 import java.util.Objects;
+import java.util.Optional;
 
 public class ServicoDeBagagem {
 
@@ -14,13 +15,8 @@ public class ServicoDeBagagem {
             throw new IllegalArgumentException("Quantidade de bagagens inválida.");
         }
 
-        Reserva reserva = servicoDeReserva.buscar(codigoReserva);
-
-        if (reserva == null) {
-            throw new Reserva.ReservaNaoEncontradaException("Reserva não existe.");
-        }
-
-        reserva.adicionarBagagens(quantidadeBagagens);
+        Optional<Reserva> reserva = servicoDeReserva.buscar(codigoReserva);
+        reserva.get().adicionarBagagens(quantidadeBagagens);
     }
 
 }
