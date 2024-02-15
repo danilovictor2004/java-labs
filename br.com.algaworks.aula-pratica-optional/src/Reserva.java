@@ -46,7 +46,7 @@ public class Reserva {
                 '}';
     }
 
-    static class ReservaNaoEncontradaException extends Exception {
+    public static class ReservaNaoEncontradaException extends Exception {
         public ReservaNaoEncontradaException() {
         }
 
