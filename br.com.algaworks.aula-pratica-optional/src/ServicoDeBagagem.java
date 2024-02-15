@@ -3,7 +3,7 @@ import java.util.Optional;
 
 public class ServicoDeBagagem {
 
-    private ServicoDeReserva servicoDeReserva;
+    private final ServicoDeReserva servicoDeReserva;
 
     public ServicoDeBagagem(ServicoDeReserva servicoDeReserva) {
         Objects.requireNonNull(servicoDeReserva);
@@ -15,12 +15,10 @@ public class ServicoDeBagagem {
             throw new IllegalArgumentException("Quantidade de bagagens inválida.");
         }
 
-        Optional<Reserva> reserva = servicoDeReserva.buscar(codigoReserva);
-        if (reserva.isPresent()) {
-            reserva.get().adicionarBagagens(quantidadeBagagens);
-        } else {
-            throw new Reserva.ReservaNaoEncontradaException("Reserva não existe.");
-        }
+        servicoDeReserva.buscar(codigoReserva)
+                .orElseThrow(() -> new Reserva.ReservaNaoEncontradaException("Reserva não existe."))
+                .adicionarBagagens(quantidadeBagagens);
+
     }
 
 }
