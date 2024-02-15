@@ -10,7 +10,7 @@ public class Principal {
         servicoDeReserva.adicionar(new Reserva("74F877", voo, "Sebastião Coelho"));
 
         try {
-            servicoDeBagagens.contratar("28A888", 2);
+            servicoDeBagagens.contratar("28XXX", 2);
             servicoDeReserva.getReservas().forEach(System.out::println);
         } catch (Reserva.ReservaNaoEncontradaException e) {
             e.printStackTrace();
