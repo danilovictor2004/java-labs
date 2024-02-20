@@ -2,7 +2,6 @@ import estoque.CadastroProduto;
 import estoque.Produto;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Principal {
 
