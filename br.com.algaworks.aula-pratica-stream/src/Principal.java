@@ -18,7 +18,7 @@ public class Principal {
         Stream<Produto> streamComEstoqueInativo = streamComEstoque.filter(Produto::isInativo);
 
         streamComEstoqueInativo.forEach(produto -> {
-            produto.isAtivo();
+            produto.ativar();
             System.out.println(produto);
         });
 
