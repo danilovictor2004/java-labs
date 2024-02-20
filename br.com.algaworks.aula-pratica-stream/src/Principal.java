@@ -11,16 +11,13 @@ public class Principal {
         CadastroProduto cadastroProduto = new CadastroProduto();
         List<Produto> produtos = cadastroProduto.obterTodos();
 
-        Stream<Produto> produtoStream = produtos.stream();
-
-        Stream<Produto> streamComEstoque = produtoStream.filter(Produto::temEstoque);
-
-        Stream<Produto> streamComEstoqueInativo = streamComEstoque.filter(Produto::isInativo);
-
-        streamComEstoqueInativo.forEach(produto -> {
-            produto.ativar();
-            System.out.println(produto);
-        });
+        produtos.stream()
+                .filter(Produto::temEstoque)
+                .filter(Produto::isInativo)
+                .forEach(produto -> {
+                    produto.ativar();
+                    System.out.println(produto);
+                });
 
     }
 
