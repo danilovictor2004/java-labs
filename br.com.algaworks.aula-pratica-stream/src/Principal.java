@@ -1,10 +1,7 @@
 import estoque.CadastroProduto;
 import estoque.Produto;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalInt;
+import java.util.*;
 
 public class Principal {
 
@@ -21,15 +18,32 @@ public class Principal {
 //                    System.out.println(produto);
 //                });
 
-        List<Produto> produtos = new ArrayList<>();
-        OptionalInt maiorValorOptional = produtos.stream()
-                .mapToInt(Produto::getQuantidade)
-                .reduce(Integer::max);
+//        List<Produto> produtos = new ArrayList<>();
+//        OptionalInt maiorValorOptional = produtos.stream()
+//                .mapToInt(Produto::getQuantidade)
+//                .reduce(Integer::max);
+//
+//        int maiorValor = maiorValorOptional
+//                .orElseThrow(() -> new RuntimeException("Quantidade não encontrada"));
+//
+//        System.out.println(maiorValor);
 
-        int maiorValor = maiorValorOptional
-                .orElseThrow(() -> new RuntimeException("Quantidade não encontrada"));
+        // menor valor do produto que tem estoque
+        List<Produto> produtos = cadastroProduto.obterTodos();
 
-        System.out.println(maiorValor);
+        Produto menorPreco = produtos.stream()
+                .filter(Produto::temEstoque)
+                .min(Comparator.comparing(Produto::getPreco))
+                .orElseThrow(() -> new RuntimeException("Menor preço de produto não encontrado."));
+        System.out.printf("O menor preço é o produto %s que custa R$ %.2f%n",
+                menorPreco.getNome(), menorPreco.getPreco());
+
+        Produto maiorPreco = produtos.stream()
+                .filter(Produto::temEstoque)
+                .max(Comparator.comparing(Produto::getPreco))
+                .orElseThrow(() -> new RuntimeException("Maior preço de produto não encontrado."));
+        System.out.printf("O maior preço é o produto %s que custa R$ %.2f",
+                maiorPreco.getNome(), maiorPreco.getPreco());
 
     }
 
