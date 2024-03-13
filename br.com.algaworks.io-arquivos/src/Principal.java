@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class Principal {
 
@@ -20,7 +19,6 @@ public class Principal {
         } catch (IOException e) {
             throw new RuntimeException("ERRO: Arquivo não pode ser criado.");
         }
-
 
     }
 
