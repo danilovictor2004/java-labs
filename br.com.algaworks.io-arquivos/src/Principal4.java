@@ -1,7 +1,4 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 
 public class Principal4 {
 
@@ -16,6 +13,18 @@ public class Principal4 {
         } catch (IOException e) {
             throw new RuntimeException("Erro de I/O", e);
         }
+
+        // Ler o arquivo texto
+        try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            while (reader.ready()) {
+                System.out.println(reader.readLine());
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("Arquivo não encontrado.", e);
+        } catch (IOException e) {
+            throw new RuntimeException("Erro de I/O", e);
+        }
+
     }
 
 }
