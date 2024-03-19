@@ -38,4 +38,12 @@ public class Funcionario implements Serializable {
         this.salario = salario;
     }
 
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "nome='" + nome + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", salario=" + salario +
+                '}';
+    }
 }
