@@ -30,6 +30,7 @@ public class Principal {
         try (var inputStream = new ObjectInputStream(Files.newInputStream(path, READ))) {
             Funcionario funcionario1 = (Funcionario) inputStream.readObject();
             System.out.println("Arquivo desserializado.");
+            System.out.println(funcionario1);
         } catch (IOException e) {
             throw new RuntimeException("Erro de I/O.", e);
         } catch (ClassNotFoundException e) {
