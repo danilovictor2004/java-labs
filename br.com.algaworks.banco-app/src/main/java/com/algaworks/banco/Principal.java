@@ -1,7 +1,7 @@
-package com.algaworks.crm;
+package com.algaworks.banco;
 
-import com.algaworks.crm.negocio.ContaCorrente;
-import com.algaworks.crm.negocio.Titular;
+import com.algaworks.banco.negocio.ContaCorrente;
+import com.algaworks.banco.negocio.Titular;
 
 import java.math.BigDecimal;
 

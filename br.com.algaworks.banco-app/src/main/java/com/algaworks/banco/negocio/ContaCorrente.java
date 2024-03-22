@@ -1,10 +1,13 @@
-package com.algaworks.crm.negocio;
+package com.algaworks.banco.negocio;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Objects;;
+import java.util.Objects;
+import java.util.logging.Logger;;
 
 public class ContaCorrente {
+
+    private static final Logger LOGGER = Logger.getLogger(ContaCorrente.class.getName());
 
     private final Titular titular;
     private final int agencia;
@@ -51,9 +54,11 @@ public class ContaCorrente {
 
         saldo = saldo.subtract(valorSaque);
 
-        System.out.printf("%s - %s - Saque de R$%.2f realizado na conta %s%n",
-                LocalDateTime.now(), ContaCorrente.class.getName(),
-                valorSaque, getAgencia() + "/" + getNumero());
+        LOGGER.info(String.format("Saque de R$ %.2f realizado na conta %s",
+                valorSaque, getAgencia() + "/" +getNumero()));
+//        System.out.printf("%s - %s - Saque de R$%.2f realizado na conta %s%n",
+//                LocalDateTime.now(), ContaCorrente.class.getName(),
+//                valorSaque, getAgencia() + "/" + getNumero());
     }
 
     public final void depositar(BigDecimal valorDeposito) {
@@ -65,9 +70,12 @@ public class ContaCorrente {
 
         saldo = saldo.add(valorDeposito);
 
-        System.out.printf("%s - %s - Depósito de R$%.2f realizado na conta %s%n",
-                LocalDateTime.now(), ContaCorrente.class.getName(),
-                valorDeposito, getAgencia() + "/" + getNumero());
+        LOGGER.info(String.format("Depósito de R$ %.2f realazado na conta %s",
+                valorDeposito, getAgencia() + "/" + getNumero()));
+
+//        System.out.printf("%s - %s - Depósito de R$%.2f realizado na conta %s%n",
+//                LocalDateTime.now(), ContaCorrente.class.getName(),
+//                valorDeposito, getAgencia() + "/" + getNumero());
     }
 
     public void imprimirDemonstrativo() {
