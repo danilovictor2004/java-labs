@@ -3,14 +3,14 @@ package com.algaworks.banco;
 import com.algaworks.banco.negocio.ContaCorrente;
 import com.algaworks.banco.negocio.SaldoInsuficienteException;
 import com.algaworks.banco.negocio.Titular;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Principal {
 
-    private static final Logger LOGGER = Logger.getLogger(Principal.class.getName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Principal.class);
 
     public static void main(String[] args) {
         var titular = new Titular("João", "12312312399");
@@ -21,10 +21,10 @@ public class Principal {
             contaCorrente.sacar(new BigDecimal("50.5"));
             contaCorrente.sacar(new BigDecimal("300"));
         } catch (SaldoInsuficienteException e) {
-            LOGGER.log(Level.WARNING, String.format("Valor insuficiente para saque. Dados bancários: "
-                    + contaCorrente.getAgencia() + "/" + contaCorrente.getNumero()), e);
+            LOGGER.warn("Valor insuficiente para saque. Dados bancários: "
+                    + contaCorrente.getAgencia() + "/" + contaCorrente.getNumero(), e);
         } catch (IllegalArgumentException e) {
-            LOGGER.log(Level.WARNING, "O valor do saque deve ser maior que 0", e);
+            LOGGER.warn("O valor do saque deve ser maior que 0", e);
         }
     }
 

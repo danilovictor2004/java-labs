@@ -1,9 +1,10 @@
 package com.algaworks.banco.negocio;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Objects;
-import java.util.logging.Logger;;
+import java.util.logging.Logger;
+
+;
 
 public class ContaCorrente {
 
