@@ -10,9 +10,11 @@ import java.util.List;
 
 public class VendaRepository {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/comercial";
-    private static final String USER = "root";
-    private static final String PASSWORD = "123456";
+    private final Connection connection;
+
+    public VendaRepository(Connection connection) {
+        this.connection = connection;
+    }
 
     public Venda adicionar(Venda venda) {
         String dml = """
@@ -20,8 +22,7 @@ public class VendaRepository {
                     VALUES (?,?,?)
                 """;
 
-        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement statement = connection.prepareStatement(dml, Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement statement = connection.prepareStatement(dml, Statement.RETURN_GENERATED_KEYS)) {
 
             statement.setString(1, venda.getNomeCliente());
             statement.setBigDecimal(2, venda.getValorTotal());
@@ -42,10 +43,8 @@ public class VendaRepository {
         List<Venda> vendas = new ArrayList<>();
         String sql = "SELECT * FROM venda";
 
-        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            Statement stmt = connection.createStatement();
+        try (Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sql)) {
-
 
             while (rs.next()) {
                 Long id = rs.getLong("id");

@@ -8,7 +8,11 @@ import java.time.LocalDate;
 
 public class CadastroVendaServices {
 
-     VendaRepository vendaReposity = new VendaRepository();
+     private final VendaRepository vendaReposity;
+
+    public CadastroVendaServices(VendaRepository vendaReposity) {
+        this.vendaReposity = vendaReposity;
+    }
 
     public Venda cadastrar(String nomeCliente, BigDecimal valorTotal, LocalDate dataPagamento) {
         if (valorTotal.compareTo(BigDecimal.ZERO) <= 0) {
