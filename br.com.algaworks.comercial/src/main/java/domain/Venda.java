@@ -13,6 +13,12 @@ public class Venda {
     public Venda() {
     }
 
+    public Venda(String nomeCliente, BigDecimal valorTotal, LocalDate dataPagamento) {
+        this.nomeCliente = nomeCliente;
+        this.valorTotal = valorTotal;
+        this.dataPagamento = dataPagamento;
+    }
+
     public Venda(Long id, String nomeCliente, BigDecimal valorTotal, LocalDate dataPagamento) {
         this.id = id;
         this.nomeCliente = nomeCliente;
