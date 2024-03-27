@@ -3,7 +3,10 @@ package repository;
 import domain.Venda;
 import exceptions.NegocioExceptions;
 
+import java.math.BigDecimal;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VendaRepository {
 
@@ -33,6 +36,32 @@ public class VendaRepository {
         } catch (SQLException e) {
             throw new NegocioExceptions(e);
         }
+    }
+
+    public List<Venda> listar() {
+        List<Venda> vendas = new ArrayList<>();
+        String sql = "SELECT * FROM venda";
+
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+
+
+            while (rs.next()) {
+                Long id = rs.getLong("id");
+                String nomeCliente = rs.getString("nome_cliente");
+                BigDecimal valorTotal = rs.getBigDecimal("valor_total");
+                Date dataPagamento = rs.getDate("data_pagamento");
+
+                Venda venda = new Venda (id, nomeCliente, valorTotal, dataPagamento.toLocalDate());
+                vendas.add(venda);
+            }
+
+            return vendas;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 }
