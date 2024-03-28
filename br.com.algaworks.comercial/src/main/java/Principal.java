@@ -25,6 +25,10 @@ public class Principal {
                 System.out.println();
                 Venda consultaVendaPorId = vendaRepository.consultarVendaId(2L);
                 System.out.println(consultaVendaPorId);
+                System.out.println();
+
+                vendaRepository.deleteVendaPorId(2L);
+                System.out.println("Item excluído");
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

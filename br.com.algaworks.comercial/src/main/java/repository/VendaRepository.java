@@ -86,4 +86,18 @@ public class VendaRepository {
         }
     }
 
+    public void deleteVendaPorId(Long id) {
+        String sql = """
+                        DELETE FROM venda
+                         WHERE id = ?;
+                     """;
+
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setLong(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Registro não existe.", e);
+        }
+    }
+
 }
