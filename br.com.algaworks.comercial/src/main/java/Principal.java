@@ -21,6 +21,10 @@ public class Principal {
 
                 var listarTodos = vendaRepository.listar();
                 listarTodos.forEach(System.out::println);
+
+                System.out.println();
+                Venda consultaVendaPorId = vendaRepository.consultarVendaId(2L);
+                System.out.println(consultaVendaPorId);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

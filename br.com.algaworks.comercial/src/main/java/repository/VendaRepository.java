@@ -63,4 +63,27 @@ public class VendaRepository {
 
     }
 
+    public Venda consultarVendaId(Long id) {
+        String sql = "SELECT * FROM venda WHERE id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setLong(1, id);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+                id = rs.getLong("id");
+                String nomeCliente = rs.getString("nome_cliente");
+                BigDecimal valorTotal = rs.getBigDecimal("valor_total");
+                Date dataPagamento = rs.getDate("data_pagamento");
+
+                return new Venda(id, nomeCliente, valorTotal, dataPagamento.toLocalDate());
+            }
+
+            throw new RuntimeException("Código não localizado");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
