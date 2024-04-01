@@ -1,8 +1,8 @@
-package com.algaworks.banco;
+package csv.banco;
 
-import com.algaworks.banco.negocio.ContaCorrente;
-import com.algaworks.banco.negocio.SaldoInsuficienteException;
-import com.algaworks.banco.negocio.Titular;
+import csv.banco.negocio.ContaCorrente;
+import csv.banco.negocio.SaldoInsuficienteException;
+import csv.banco.negocio.Titular;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

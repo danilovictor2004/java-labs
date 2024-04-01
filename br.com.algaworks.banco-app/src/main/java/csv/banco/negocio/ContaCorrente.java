@@ -1,4 +1,4 @@
-package com.algaworks.banco.negocio;
+package csv.banco.negocio;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

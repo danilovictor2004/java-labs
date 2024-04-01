@@ -1,4 +1,4 @@
-package com.algaworks.financeiro;
+package csv.financeiro;
 
 import java.io.Serializable;
 

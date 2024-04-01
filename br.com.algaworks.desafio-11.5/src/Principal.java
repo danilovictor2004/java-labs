@@ -1,5 +1,5 @@
-import com.algaworks.financeiro.ContaPagar;
-import com.algaworks.financeiro.Fornecedor;
+import csv.financeiro.ContaPagar;
+import csv.financeiro.Fornecedor;
 
 public class Principal {
 
