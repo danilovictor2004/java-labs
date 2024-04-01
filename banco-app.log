@@ -1,14 +1,14 @@
-2024-03-25 11:28.31.214 INFO com.algaworks.banco.negocio.ContaCorrente - Depósito de R$ 200 realazado na conta 100/9999
-2024-03-25 11:28.31.217 INFO com.algaworks.banco.negocio.ContaCorrente - Saque de R$ 50.5 realizado na conta 100/9999
-2024-03-25 11:28.31.218 WARN com.algaworks.banco.Principal - Valor insuficiente para saque. Dados bancários: 100/9999
-com.algaworks.banco.negocio.SaldoInsuficienteException: Saldo insuficiente para saque
-	at com.algaworks.banco.negocio.ContaCorrente.validarSaldoParaSaque(ContaCorrente.java:43)
-	at com.algaworks.banco.negocio.ContaCorrente.sacar(ContaCorrente.java:54)
-	at com.algaworks.banco.Principal.main(Principal.java:22)
-2024-03-25 11:30.38.667 INFO com.algaworks.banco.negocio.ContaCorrente - Depósito de R$ 200 realazado na conta 100/9999
-2024-03-25 11:30.38.670 INFO com.algaworks.banco.negocio.ContaCorrente - Saque de R$ 50.5 realizado na conta 100/9999
-2024-03-25 11:30.38.671 WARN com.algaworks.banco.Principal - Valor insuficiente para saque. Dados bancários: 100/9999
-com.algaworks.banco.negocio.SaldoInsuficienteException: Saldo insuficiente para saque
-	at com.algaworks.banco.negocio.ContaCorrente.validarSaldoParaSaque(ContaCorrente.java:43)
-	at com.algaworks.banco.negocio.ContaCorrente.sacar(ContaCorrente.java:54)
-	at com.algaworks.banco.Principal.main(Principal.java:22)
+2024-03-25 11:28.31.214 INFO negocio.banco.csv.ContaCorrente - Depósito de R$ 200 realazado na conta 100/9999
+2024-03-25 11:28.31.217 INFO negocio.banco.csv.ContaCorrente - Saque de R$ 50.5 realizado na conta 100/9999
+2024-03-25 11:28.31.218 WARN banco.csv.Principal - Valor insuficiente para saque. Dados bancários: 100/9999
+negocio.banco.csv.SaldoInsuficienteException: Saldo insuficiente para saque
+	at negocio.banco.csv.ContaCorrente.validarSaldoParaSaque(ContaCorrente.java:43)
+	at negocio.banco.csv.ContaCorrente.sacar(ContaCorrente.java:54)
+	at banco.csv.Principal.main(Principal.java:22)
+2024-03-25 11:30.38.667 INFO negocio.banco.csv.ContaCorrente - Depósito de R$ 200 realazado na conta 100/9999
+2024-03-25 11:30.38.670 INFO negocio.banco.csv.ContaCorrente - Saque de R$ 50.5 realizado na conta 100/9999
+2024-03-25 11:30.38.671 WARN banco.csv.Principal - Valor insuficiente para saque. Dados bancários: 100/9999
+negocio.banco.csv.SaldoInsuficienteException: Saldo insuficiente para saque
+	at negocio.banco.csv.ContaCorrente.validarSaldoParaSaque(ContaCorrente.java:43)
+	at negocio.banco.csv.ContaCorrente.sacar(ContaCorrente.java:54)
+	at banco.csv.Principal.main(Principal.java:22)

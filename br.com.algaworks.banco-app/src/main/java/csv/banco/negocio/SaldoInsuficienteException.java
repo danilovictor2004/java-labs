@@ -1,4 +1,4 @@
-package com.algaworks.banco.negocio;
+package csv.banco.negocio;
 
 public class SaldoInsuficienteException extends RuntimeException {
 

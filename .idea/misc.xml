@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/br.com.algaworks.banco-app/pom.xml" />
         <option value="$PROJECT_DIR$/br.com.algaworks.comercial/pom.xml" />
+        <option value="$PROJECT_DIR$/br.com.algaworks.gerador-csv/pom.xml" />
       </list>
     </option>
   </component>
