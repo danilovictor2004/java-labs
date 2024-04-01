@@ -3,8 +3,10 @@ package csv;
 import crm.entidade.Cliente;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class GeradorCSV {
@@ -20,8 +22,20 @@ public class GeradorCSV {
     }
 
     private static void imprimir(Cliente cliente) {
-        System.out.printf("%d;%s;%s%n", cliente.getCodigo(),
-                cliente.getNome(), cliente.getDataNascimento());
+        Field[] field = cliente.getClass().getDeclaredFields();
+        List<String> valores = new ArrayList<>();
+
+        try {
+            for (Field field1 : field) {
+                field1.setAccessible(true);
+                Object objects = field1.get(cliente);
+                valores.add(objects == null ? "" : objects.toString());
+            }
+
+            System.out.println(String.join(";", valores));
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
