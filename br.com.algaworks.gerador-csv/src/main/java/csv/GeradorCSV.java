@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 public class GeradorCSV {
 
-    public static <T> void imprimir(List<Cliente> objetos) {
-        Field[] field =  Cliente.class.getDeclaredFields();
+    public static <T> void imprimir(Class<T> clazz, List<T> objetos) {
+        Field[] field =  clazz.getDeclaredFields();
 
         System.out.println(Arrays.stream(field)
                 .map(Field::getName)
@@ -21,7 +21,7 @@ public class GeradorCSV {
         objetos.forEach(GeradorCSV::imprimir);
     }
 
-    private static void imprimir(Cliente cliente) {
+    private static void imprimir(Object cliente) {
         Field[] field = cliente.getClass().getDeclaredFields();
         List<String> valores = new ArrayList<>();
 
