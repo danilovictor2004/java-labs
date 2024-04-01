@@ -1,6 +1,6 @@
 package csv;
 
-import com.algaworks.crm.entidade.Cliente;
+import crm.entidade.Cliente;
 
 import java.util.List;
 

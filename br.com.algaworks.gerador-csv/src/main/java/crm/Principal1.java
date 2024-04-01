@@ -1,7 +1,7 @@
 package crm;
 
-import com.algaworks.crm.entidade.Cliente;
-import com.algaworks.csv.GeradorCSV;
+import crm.entidade.Cliente;
+import csv.GeradorCSV;
 
 import java.time.LocalDate;
 import java.util.Arrays;

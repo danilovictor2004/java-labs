@@ -1,7 +1,6 @@
 package crm;
 
-import com.algaworks.crm.entidade.Produto;
-import com.algaworks.csv.GeradorCSV;
+import crm.entidade.Produto;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
