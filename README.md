@@ -14,6 +14,7 @@ Este repositório contém informações sobre meus estudos em Java. Aqui, docume
 
 - **JDBC (Java Database Connectivity)**: Acesso a bancos de dados usando Java.
 
+- **Adicionais:**: Expressões Lambda e Method Reference, Optional, Streamns API, Date/Time API.
 ## Recursos Utilizados
 
 - **Cursos Online**:
